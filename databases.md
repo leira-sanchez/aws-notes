@@ -159,3 +159,8 @@ ElastiCache supports two open-source in-memory caching engines:
     * Multi-AZ
 
     * It is possible to do backups and restores 
+
+
+## From the Quiz
+
+* It is not possible to use the secondary database as an independent read node when you have deployed an RDS database into Multiple AZs.
