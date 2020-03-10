@@ -151,9 +151,23 @@ A platform to send your streaming data to.
 ## Web Identity Federation && Cognito
 * **Web Identity Federation** - lets you give your users access to AWS resources after they have successfully authenticated with a web-based identity provider like Amazon, Facebook, or Google. The user receives an authentication code from the Web ID provider, which they can trade for temporary AWS security credentials.
 
-* **Cognito** - Amazon's Web Identity Federation Service.
+* **Cognito** - Amazon's Web Identity Federation Service (Identity Broker).
     * Sign-up and sign-in to your apps
 
     * Access for guest users
 
     * Acts as an Identity Broker between your application and Web ID proviers, so you don't need to write any additional code
+
+    * Synchronizes user data for multiple devices
+
+    * Recommended for all mobile applications AWS services
+
+    * Tracks the association between user identity and the various different devices they sign-in from 
+
+    * Uses Push Synchronization to push updates and synchronize user data across multiple devices
+
+    * Uses SNS to send a notification to all the devices associated with a given user identity whenever data stored in the cloud changes
+
+    * **User Pools** - directories used to manage sign-up and sign-in functionality for mobile and web applications. Users can sign-in directly to the User Pool or through social media. Successful authentication generates a JSON Web Token
+
+    * **Identity pool** - authorise access to your AWS resource
