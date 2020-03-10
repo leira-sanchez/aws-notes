@@ -8,6 +8,8 @@ A physical or virtual device that is designed to help balance the network load a
 
     * They are intelligent, and you can create advanced request routing, sending specified requests to specific web servers.
 
+    * Cannot have Elastic IP assigned.
+
 1. **Network Load Balancer**
     * Best suited for load balancing of TCP traffic where extreme performance is required.
 
@@ -65,6 +67,8 @@ You can create a listener with rules to forward requests based on the URL path. 
     * Elastic Load Balancer
 
     * AutoScaling Group
+
+* Desired capacity - provides a target value for Auto Scaling to match. If a discrepancy between desired and actual exist, Auto Scaling will work to match the desired value
 
 ## HA Architecture
 1. Always design for failure.

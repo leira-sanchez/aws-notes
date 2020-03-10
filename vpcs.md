@@ -88,7 +88,7 @@ Highly available that connects to the internet without becoming public, spread a
 
 * If you only have one NAT Gateway and its AZ goes down, resources in the other AZs lose internet access.
 
-### Network Access Control Lists
+## Network Access Control Lists
 
 * Rules changes take effect immediately
 
@@ -114,7 +114,18 @@ Highly available that connects to the internet without becoming public, spread a
 
 * You can associate a NACL with multiple subnets but a subnet can only be associated with one NACL at a time. When you associate a NACL with a subnet, the previous association is removed
 
-### VPC Flow Logs
+## Security Groups
+Function as a firewall that controls traffic to and from an instance by permitting traffic to ingress or egress the instance's ENI.
+
+* Can be attached to multiple ENIs
+
+* Deny by default (whitelisting)
+
+* Inbound rules must be added to allow inbound traffic
+
+* All rules are analyzed before deciding to allow/deny. Order of rules doesn't matter
+
+## VPC Flow Logs
 A feature that enables you to capture information about the IP traffic going to and from network interfaces in your VPC. Flow log data is stored using CloudWatch Logs. After you've created a flow log, you can view and retrieve its data in CloudWatch Logs.
 
 * Can be created at 3 levels
@@ -141,21 +152,21 @@ A feature that enables you to capture information about the IP traffic going to 
 
     * Traffic to the reserved IP address for the default VPC router.
 
-### Bastion Hosts
+## Bastion Hosts
 A special purpose EC2 instance on a network designed and configured to withstand attacks. Also known as Jump Boxes.
 
 A way of SSHing or RDPing into your private instances in your private subnets.
 
 * You cannot use NAT Gateway as a Bastion host.
 
-### Direct Connect
+## Direct Connect
 A cloud service solution that makes it easy to establish a dedicated network connection from your premises to AWS.
 
 * Directly connects your data center to AWS
 
 * Useful for high throughput workloads (lots of network traffic) or if you need a stable and reliable secure connection
 
-### VPC Endpoints
+## VPC Endpoints
 Enables you to privately connect your VPC to supported AWS services and VPC endpoint services powered by PrivateLink without requiring an internet gateway, NAT device, VPN connection, or AWS Direct Connection.
 
 * Virtual devices
@@ -167,3 +178,9 @@ Enables you to privately connect your VPC to supported AWS services and VPC endp
 * Highly Available
 
 * Allow communication between instances in your VPC and services without imposing availability risks or bandwidth constraints on your network traffic
+
+## Elastic Network Interfaces (ENI)
+Allows an instance to communicate with other netowrk resources including AWS services, other instances, on-premises servers, and the Internet. Also makes it possible for you to connect to the OS running on your instance to manage it.
+* Can exist independently of an instance
+
+* Must have at least one security group associated with it but can have multiple as well
