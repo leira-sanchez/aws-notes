@@ -70,6 +70,9 @@ You can create a listener with rules to forward requests based on the URL path. 
 
 * Desired capacity - provides a target value for Auto Scaling to match. If a discrepancy between desired and actual exist, Auto Scaling will work to match the desired value
 
+* Lifecycle Hooks - puts the instance into wait state before termination. During this wait state, you can perform custom activities, like retrieve critical operational data from a stateful instance.
+    * Wait period - 1 hour
+
 ## HA Architecture
 1. Always design for failure.
 
@@ -86,12 +89,16 @@ You can create a listener with rules to forward requests based on the URL path. 
     * Scaling up - increase resources inside the EC2 instances.
 
 ### CloudFormation
-A way of completely scripting the cloud environment. 
+A way of completely scripting the cloud environment. **Create environment templates.**
 
 * Quick Start - a bunch of CloudFormation templates already built by AWS Solutions Architects allowing you to create complex enviornments very quickly.
 
+* Drift Detection - can be used to detect changes made to AWS resources outside the CloudFormation Templates. Only checks property values that are explicitly set by stack templates or by specifying template parameters. 
+
 ### Elastic Beanstalk
 Quickly deploy and manage applications in the AWS Cloud without worrying about the infrastructure that runs those applications. Simply upload the application, and Elastic Beanstalk automatically handles the details of capacity provisioning, load balancing, scaling, and application health monitoring.
+
+* Used to create Web Server environments and Worker environments.
 
 ## From the Quiz
 

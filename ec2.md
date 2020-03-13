@@ -27,6 +27,8 @@ Mnemonic for instance types: FIGHT DR MCPXZ AU
 
 * EBS Root Volumes and additional volumes of default AMI's can be encrypted. 
 
+* Backup - use snapshots
+
 * Types
     1. **General Purpose (SSD)** 
     1. **Provisioned IOPS (SSD)**
@@ -34,6 +36,7 @@ Mnemonic for instance types: FIGHT DR MCPXZ AU
     1. **Cold Hard Disk Drive**
     1. **Magnetic**
 
+![documentation](ebs.png)
 
 ### Security Groups
 * All inbound traffic is blocked by default.
@@ -107,6 +110,17 @@ Examples:
 * Using EFS with Microsoft Windows is not supported.
 
 * Using File Gateway is the recommended way to use S3 with shared document pools.
+
+* EFS Lifecycle - used to migrate files that have not been accessed for a certain period of time to IA. Files migrated remain indefinitely. They do not get deleted.
+
+### CloudFront
+A web service that speeds up distribuition of your static and dynamic web content. 
+
+* Delivers content through a worldwide network of data centers called edge locations.
+
+* User requests are routed to the edge location that provies the lowest latency (time delay).
+
+* If the content is already in the edge location with the lowest latency, it is delivered immediately.
 
 ### EC2 Placement Groups
 

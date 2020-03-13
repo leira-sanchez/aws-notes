@@ -184,3 +184,8 @@ Allows an instance to communicate with other netowrk resources including AWS ser
 * Can exist independently of an instance
 
 * Must have at least one security group associated with it but can have multiple as well
+
+
+### Extra
+
+* **Enhanced VPC Routing** - provides VPC resources access to Redshift

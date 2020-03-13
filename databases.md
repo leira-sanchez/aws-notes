@@ -109,6 +109,8 @@ A MySQL and PostgreSQL-compatible relational database engine that combines the s
 
 * Advanced compression
 
+* Enhanced VPC Routing - provides VPC resources access to Redshift
+
 * Massively Parallel Processing (MPP)
 
 * Backups
@@ -139,7 +141,7 @@ A MySQL and PostgreSQL-compatible relational database engine that combines the s
 
     * Encrypted at rest using AES-256 encryption
 
-    * By default Redshift takes care of key management
+    * By default Redshift takes care of key management (encryption)
         * HSM
 
         * KMS
@@ -164,3 +166,7 @@ ElastiCache supports two open-source in-memory caching engines:
 ## From the Quiz
 
 * It is not possible to use the secondary database as an independent read node when you have deployed an RDS database into Multiple AZs.
+
+## Extra
+
+* DynamoDB and ElastiCache are perfect options for storing session data.
