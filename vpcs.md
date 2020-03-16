@@ -1,6 +1,8 @@
 # VPC
 Virtual Private Cloud - lets you provision a logically isolated section of the AWS Cloud where you can launch AWS resources in a virtual network that you define. You have complete control over your virtual networking environment, including selection of your own IP address range, creating of subnets, and configuration of route tables and network gateways.
 
+[Cheat Sheet](https://tutorialsdojo.com/aws-cheat-sheet-amazon-vpc/)
+
 ## What can we do with a VPC?
 
 * Launch instances into a subnet of your choosing
@@ -153,7 +155,7 @@ A feature that enables you to capture information about the IP traffic going to 
     * Traffic to the reserved IP address for the default VPC router.
 
 ## Bastion Hosts
-A special purpose EC2 instance on a network designed and configured to withstand attacks. Also known as Jump Boxes.
+A special purpose EC2 instance on a network designed and configured to withstand attacks. Also known as Jump Boxes. Provides access to a private network from an external network.
 
 A way of SSHing or RDPing into your private instances in your private subnets.
 
@@ -185,7 +187,15 @@ Allows an instance to communicate with other netowrk resources including AWS ser
 
 * Must have at least one security group associated with it but can have multiple as well
 
+## WAF
+Control how CloudFront or an ALB responds to web requests. 
+
 
 ### Extra
 
 * **Enhanced VPC Routing** - provides VPC resources access to Redshift
+
+* Calculate the total number of IP addresses of a given CIDR Block:
+    1. Subtract 32 with the mask number (32 - x)
+
+    1. Raise the number 2 to the power of the answer in step #1 (2^(32-x))

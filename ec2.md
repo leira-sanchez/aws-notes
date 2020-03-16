@@ -10,6 +10,8 @@
     * Convertible Reserved Instances
     * Scheduled Reserved Instances
     
+    * Don't get interrupted in the event that there are not enough unused EC2 instances to meet the demand. 
+
     **Cannot be moved between regions**
 
 1. **Spot** - a bid for instance capacity. Requires time flexibility.
@@ -18,6 +20,7 @@
 
 Mnemonic for instance types: FIGHT DR MCPXZ AU
 
+[Cheat Sheet](https://tutorialsdojo.com/aws-cheat-sheet-amazon-elastic-compute-cloud-amazon-ec2/)
 ### EBS
 **Elastic Block Store (EBS)** - provides persistent block storage volumes for use with Amazon EC2 instances. Volumes are automatically replicated within its Availability Zone to protect you from component failure, offering high availability and durability.
 
@@ -28,6 +31,7 @@ Mnemonic for instance types: FIGHT DR MCPXZ AU
 * EBS Root Volumes and additional volumes of default AMI's can be encrypted. 
 
 * Backup - use snapshots
+    * the volume can be used as normal while the snapshit is in progress (snapshots are created asynchronously).
 
 * Types
     1. **General Purpose (SSD)** 
@@ -37,6 +41,7 @@ Mnemonic for instance types: FIGHT DR MCPXZ AU
     1. **Magnetic**
 
 ![documentation](ebs.png)
+[Cheat Sheet](https://tutorialsdojo.com/aws-cheat-sheet-amazon-ebs/)
 
 ### Security Groups
 * All inbound traffic is blocked by default.
@@ -102,7 +107,30 @@ Examples:
     * Disk
     * Status Check
 
+* Cloud Watch **Metrics** 
+    * CPU Utilization - identifies the processing power required to run an application upon a selected instance
+
+    * Network Utilization - identifies the volume of incoming and outgoing network traffic to a single instance
+
+    * Disk Reads - used to determine the volume of the data the application reads from the hard disk of the instance. Can be used to determine the speed of the application
+
+    * Custom metrics you can setup:
+        * Memory utilization
+
+        * Disk swap utilization
+
+        * Disk space utilization
+
+        * Page file utilization
+
+        * Log collection
+
+[Cheat Sheet](https://tutorialsdojo.com/aws-cheat-sheet-amazon-cloudwatch/)        
+
 **CloudTrail** - increases visibility into your user and resource activity by recording AWS Management Console actions and API calls. You can identifiy which users and accounts called AWS, the source IP address from which the calls were made, and when the calls occurred. Like a CCTV. Used for **auditing**.
+
+### AWS Config
+Typically used for auditing and compliance purposes across organizations to verify whether AWS resource changes being mad are per compliance rules.
 
 ### EFS
 **Elastic File System** - file storage service for EC2 instances that is easy to use and provides a simple interface. Storage capacity is elastic, growing and shrinking automatically as you add and remove files.
@@ -113,6 +141,31 @@ Examples:
 
 * EFS Lifecycle - used to migrate files that have not been accessed for a certain period of time to IA. Files migrated remain indefinitely. They do not get deleted.
 
+### WAF
+**Web Application Firewall** - lets you monitor the HTTP and HTTPS requests that are forwarded to CloudFront, an ALB or API Gateway. Also lets you control access to your content.
+
+* Configure conditions such as what IP addresses are allowed to make this request or what query string parameters need to be passed for the request to be allowed.
+
+* Allows 3 different behaviors: 
+    1. Allow all requests except the ones you specify
+
+    1. Block all requests except the ones you specify
+
+    1. Count the requests that match the properties you specify
+
+* Extra protection against web attacks using conditions yo specify. Some conditions:
+    * IP addresses that requests originate from
+
+    * Values in request headers
+
+    * Strings that appear in requests, either specific strings or string that match regex patterns
+    
+    * Length of requests
+
+    * SQL Injection
+
+    * Cross-Site Scripting
+
 ### CloudFront
 A web service that speeds up distribuition of your static and dynamic web content. 
 
@@ -121,6 +174,8 @@ A web service that speeds up distribuition of your static and dynamic web conten
 * User requests are routed to the edge location that provies the lowest latency (time delay).
 
 * If the content is already in the edge location with the lowest latency, it is delivered immediately.
+
+[Cheat Sheet](https://tutorialsdojo.com/aws-cheat-sheet-amazon-cloudfront/)
 
 ### EC2 Placement Groups
 
@@ -147,3 +202,12 @@ A web service that speeds up distribuition of your static and dynamic web conten
     * You can isolate the impact of hardware failure within your application.
 
 
+## AWS Shield
+Managed Distributed Denial of Service (DDos) protection service that safeguards web applications running on AWS. Provides always-on detection and automatic inline mitigations that minimize application downtime and latency, so there is no need to engage AWS Support to benefit from DDoS protection
+
+* Standard - network and transport layer protection
+
+* Advanced - additional detection and mitigation against large and sophisticated DDoS attacks, nearl real-time visibility into attacks, and integration with WAF.
+    * 24/7 access to the AWS DDoS Response Team
+
+[Cheat Sheet](https://tutorialsdojo.com/aws-cheat-sheet-aws-shield/)

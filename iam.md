@@ -1,6 +1,8 @@
 # Identity and Access Management
 Controls access to AWS services via policies.
 
+[Cheat Sheet](https://tutorialsdojo.com/aws-cheat-sheet-aws-identity-and-access-management-iam/)
+
 * It is global. Does not apply to regions.
 
 * **Root** - the account created when the AWS account is first setup. It has full Admin privileges.
@@ -51,6 +53,11 @@ A list of statements that match a request to AWS based on their action and resou
 
 ## KMS
 Key Management Service - managed service that makes it easy for you to create and control the encryption keys used to encrypt your data. 
+
+## Directory Service
+Provides multiple ways to use Amazon Cloud Directory and Microsoft AD with other AWS services. Directores store information about suers, groups, and devices, and administrators use them to manage access to information and resources. 
+
+* **Directory Service AD Connector** - for when companies are using a corporate AD, to make integration easier
 
 # Organizations
 

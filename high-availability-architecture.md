@@ -10,6 +10,8 @@ A physical or virtual device that is designed to help balance the network load a
 
     * Cannot have Elastic IP assigned.
 
+    * Allow containers to use dynamic host port mapping.
+
 1. **Network Load Balancer**
     * Best suited for load balancing of TCP traffic where extreme performance is required.
 

@@ -102,6 +102,12 @@ A MySQL and PostgreSQL-compatible relational database engine that combines the s
 
 * Strongly Consistent Reads - A strongly consistent read returns a result that reflects all writes that received a successful response prior to the read. (**Instant < 1**)
 
+* **DynamoDB Stream** - an ordered flow of information about changes to items in a DynamoDB table. When enabled, captures information about every modification to data items in the table.
+
+* Integrated with Lambda so you can create *triggers*. Triggers - pieces of code that automatically respond to events in DynamoDB Streams.
+
+[Cheat Sheet](https://tutorialsdojo.com/aws-cheat-sheet-amazon-dynamodb/)
+
 ## Redshift - Data Warehousing
 * Fully managed, petabyte-scale data warehouse service in the cloud. ($0.25/hr - $1k/per TB per yr)
 
@@ -150,6 +156,14 @@ A MySQL and PostgreSQL-compatible relational database engine that combines the s
     * Only available in 1 AZ
 
     * It is possible to restore snapshots to new AZ 
+
+### Redshift Spectrum
+Query and retrieve data from files in Amazon S3 without having to load the data into Redshift tables.
+
+### Workload Management (WLM)
+Uses machine learning to dynamically manage memory and concurrency helping maximize query throughput.
+
+[Cheat Sheet](https://tutorialsdojo.com/aws-cheat-sheet-amazon-redshift/)
 
 ## ElastiCache
 Web service that makes it easy to deploy, operate, and scale an in-memory cache in the cloud. The service improves the performance of web apps by allowing you to retrieve information from fast, managed, in-memory caches, instead of relying entirely on slower disk-based databases. **To seped up performance of existing databases (frequent identical queries).**

@@ -24,6 +24,8 @@ A web service that gives you access to a message queue that can be used to store
 
 * Messages in SQS queue are not encrypted by default.
 
+* Messages in the queue will continue to exist even after the EC2 instance has processed it, until you delete that message.
+
 1. **Standard Queues** - nearly unlimited number of transactions per second. Guarantees that a message is delivered at least once. **Might send the message more than once and possibly out of order.**
 
 1. **FIFO Queue** - first-in-first-out delivery and exactly-once processing: the order in which messages are sent and received is strictly preserved and a message is delivered once and remains available until a consumer processes and deletes it. Duplicates are not introduced into the queue.
@@ -31,6 +33,7 @@ A web service that gives you access to a message queue that can be used to store
 
     * Limited to 300 transactions per second (TPS) but have all the capabilities of standard queues.
 
+[Cheat Sheet](https://tutorialsdojo.com/aws-cheat-sheet-amazon-sqs/)
 
 ## SWF
 Simple Work Flow Service - enables applications for a range of use cases, including media processing, web application back-ends, business process workflows, and analytics pipelines, to be designed as a coordination of tasks. Makes it easy to coordinate work across distributed application components.
@@ -148,6 +151,8 @@ A platform to send your streaming data to.
 
 1. **Kinesis Analytics** - works with Kinesis Streams and Kinesis Firehose to analyze the data on the fly on either service. Stores the data on S3, Redshift, or Elasticsearch Cluster
 
+[Cheat Sheet](https://tutorialsdojo.com/aws-cheat-sheet-amazon-kinesis/)
+
 ## Web Identity Federation && Cognito
 * **Web Identity Federation** - lets you give your users access to AWS resources after they have successfully authenticated with a web-based identity provider like Amazon, Facebook, or Google. The user receives an authentication code from the Web ID provider, which they can trade for temporary AWS security credentials.
 
@@ -171,3 +176,6 @@ A platform to send your streaming data to.
     * **User Pools** - directories used to manage sign-up and sign-in functionality for mobile and web applications. Users can sign-in directly to the User Pool or through social media. Successful authentication generates a JSON Web Token
 
     * **Identity pool** - authorise access to your AWS resource
+
+    ## Elasticsearch Service
+    [Cheat Sheet](https://tutorialsdojo.com/aws-cheat-sheet-amazon-elasticsearch-amazon-es/)
