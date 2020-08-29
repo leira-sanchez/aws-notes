@@ -1,5 +1,3 @@
-# AWS Notes
-- Solutions Architect
 
   - [IAM - Identity Access Management](iam.md)
   - [S3](S3.md)
