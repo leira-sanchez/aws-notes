@@ -1,5 +1,14 @@
+- [Cloud Practitioner C01](/cloud-practitioner-01/)
 
-  - [IAM - Identity Access Management](iam.md)
+  - [Introduction](/cloud-practitioner-01/intro.md)
+  - [IAM - Identity and Access Management](/cloud-practitioner-01/IAM.md "Identity and Access Management")
+  - [EC2 - Elastic Compute Cloud](/cloud-practitioner-01/EC2.md "EC2 - Elastic Compute Cloud")
+  - [EC2 - Storage](/cloud-practitioner-01/EC2-storage.md)
+  - [Elastic Load Balancer & Auto Scaling Groups](/cloud-practitioner-01/ELB-ASG.md)
+  - [S3 - Simple Storage Service](/cloud-practitioner-01/S3.md)
+
+- [Solutions Architect 01](/)
+  - [IAM - Identity Access Management](iam.md "Identity and Access Management")
   - [S3](S3.md)
   - [EC2](ec2.md)
   - [Databases](databases.md)
